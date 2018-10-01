@@ -1,1 +1,2 @@
-# padroes_de_projetos
+# Padrões de Projetos - FATEC SJC
+> Repositório com conteúdo da aula de padrões de projetos
