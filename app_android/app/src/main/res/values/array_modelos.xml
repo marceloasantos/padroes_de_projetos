@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerModelos">
+        <item>Modelo</item>
+        <item>Corsa</item>
+        <item>Prisma</item>
+        <item>Montana</item>
+        <item>Gol</item>
+        <item>Polo</item>
+        <item>Saveiro</item>
+        <item>Palio</item>
+        <item>Siena</item>
+        <item>Strada</item>
+        <item>Ka</item>
+        <item>Focus</item>
+        <item>Fiesta</item>
+    </string-array>
+</resources>

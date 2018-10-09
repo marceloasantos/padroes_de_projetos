@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerCombustivel">
+        <item>Combustível</item>
+        <item>Alcóol</item>
+        <item>Gasolina</item>
+        <item>Flex</item>
+        <item>Diesel</item>
+    </string-array>
+</resources>
