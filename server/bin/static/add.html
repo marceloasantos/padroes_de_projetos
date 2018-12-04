@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="css/bulma.css" rel=stylesheet>
+
+<title>Manutenção</title>
+
+
+<script src="js/jquery.js"></script>
+
+<link href="css/bootstrap.min.css" rel=stylesheet>
+
+<script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	$(document).ready(
+			function() {
+				$("#cadastrar").click(function(e) {
+
+					var c_placa = $('#c_placa').val().trim();
+					var c_ano = $('#c_ano').val().trim();
+					var c_responsavel = $('#c_responsavel').val().trim();
+					var c_marca = $('#c_marca').val().trim();
+					var c_modelo = $('#c_modelo').val().trim();
+					var c_cor = $('#c_cor').val().trim();
+					var c_combustivel = $('#c_combustivel').val().trim();
+
+					$.post("/adicionar/carro", JSON.stringify({
+						'c_placa' : c_placa,
+						'c_ano' : c_ano,
+						'c_responsavel' : c_responsavel,
+						'c_marca' : c_marca,
+						'c_modelo' : c_modelo,
+						'c_cor' : c_cor,
+						'c_combustivel' : c_combustivel
+						
+					}), function(data) {
+
+						if (data[0].status == 0) {
+							window.location.href = '/home.html';
+
+						} else {
+							window.location.href = '/home.html';
+
+						}
+
+					}, "json");
+
+				});
+			});	
+
+	</script>
+
+
+</head>
+
+
+<body>
+<br><br>
+
+	<p class="text-center"><img src="/imagens/car-add.png" id="img-car-add"></p>
+
+	
+<br> 
+	<div class="form-horizontal" id="form">
+		<div style="padding-left: 600px; padding-right: 600px">
+			<input id="c_placa" type="text" class="input is-small"
+				placeholder="Placa">
+			<p>
+			<p>
+				<input id="c_ano" type="text" class="input is-small"
+					placeholder="Ano">
+			<p>
+				<input id="c_responsavel" type="text" class="input is-small"
+					placeholder="Responsavel">
+			<p>
+				<input id="c_marca" type="text" class="input is-small"
+					placeholder="Marca">
+			<p>
+				<input id="c_modelo" type="text" class="input is-small"
+					placeholder="Modelo">
+			<p>
+				<input id="c_cor" type="text" class="input-large"
+					placeholder="Cor">
+			<p>
+				<select id="c_combustivel" class="input-large form-control">
+					<option value="alcool">Álcool</option>
+					<option value="flex" selected="selected">Flex</option>
+					<option value="gasolina">Gasolina</option>
+				</select>
+			<p>
+
+				<button id="cadastrar" class="btn btn-primary">Cadastrar</button>
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>

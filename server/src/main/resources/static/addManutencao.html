@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="css/bulma.css" rel=stylesheet>
+
+<title>Manutenção</title>
+
+
+<script src="js/jquery.js"></script>
+
+<link href="css/bootstrap.min.css" rel=stylesheet>
+
+<script>
+	src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" >
+</script>
+
+<script>
+
+	$(document).ready(function() {
+		$("#cadastrarRevisao").click(function(e) {
+
+			var c_placa = $('#c_placa').val().trim();
+			var c_revisao = $('#c_revisao').val().trim();			
+
+			$.post("/adicionar/revisao", JSON.stringify({
+				'c_placa' : c_placa,
+				'c_revisao' : c_revisao,
+				
+			}), function(data) {
+
+				if (data[0].status == 0) {
+					window.location.href = '/home.html';
+
+				} else {
+					window.location.href = '/home.html';
+
+				}
+
+			}, "json");
+
+		});
+
+		//
+
+		$("#cadastrarTrocaOleo").click(function(e) {
+			
+			var c_placa = $('#c_placa').val().trim();
+			var c_trocaOleo = $('#c_trocaOleo').val().trim();
+
+			$.post("/adicionar/trocaOleo", JSON.stringify({
+				'c_placa' : c_placa,
+				'c_trocaOleo' : c_trocaOleo,
+
+			}), function(data) {
+
+				if (data[0].status == 0) {
+					window.location.href = '/home.html';
+
+				} else {
+					window.location.href = '/home.html';
+
+				}
+
+			}, "json");
+
+		});
+
+		//
+
+		$("#cadastrarTrocaFiltro").click(function(e) {
+
+			var c_placa = $('#c_placa').val().trim();
+			var c_trocaFiltro = $('#c_trocaFiltro').val().trim();
+
+			$.post("/adicionar/trocaFiltro", JSON.stringify({
+				'c_placa' : c_placa,
+				'c_trocaFiltro' : c_trocaFiltro,
+
+			}), function(data) {
+
+				if (data[0].status == 0) {
+					window.location.href = '/home.html';
+
+				} else {
+					window.location.href = '/home.html';
+
+				}
+
+			}, "json");
+
+		});
+
+		//
+
+		$("#cadastrarTrocaPneu").click(function(e) {
+
+			var c_placa = $('#c_placa').val().trim();
+			var c_trocaPneu = $('#c_trocaPneu').val().trim();
+
+			$.post("/adicionar/trocaPneu", JSON.stringify({
+				'c_placa' : c_placa,
+				'c_trocaPneu' : c_trocaPneu,
+
+			}), function(data) {
+
+				if (data[0].status == 0) {
+					window.location.href = '/home.html';
+
+				} else {
+					window.location.href = '/home.html';
+
+				}
+
+			}, "json");
+
+		});
+
+	});
+</script>
+
+
+</head>
+
+
+<body>
+	<br>
+	<br>
+
+	<p class="text-center">
+		<img src="/imagens/manut-car.png" id="img-manut-car" width="150"
+			height="150">
+	</p>
+
+
+	<br>
+
+	<div style="padding-left: 600px; padding-right: 600px">
+		<input id="c_placa" type="text"  class="input is-small"
+			placeholder="Placa"><!-- <img src="/imagens/Zoom-icon.png" id="img-lupa" width="30"
+			height="30" alt="Placas cadastradas"> -->
+		<p>
+		<p>
+		<br>
+		
+	
+	
+		<input id="c_revisao" type="text" class="input is-small"
+			placeholder="Revisão">
+		<p>
+
+			<button id="cadastrarRevisao" class="btn btn-primary">Cadastrar</button>
+		<p>
+		<p>
+	
+		<input id="c_trocaOleo" type="text" class="input is-small"
+			placeholder="Troca de Óleo">
+		<p>
+			<button id="cadastrarTrocaOleo" class="btn btn-primary">Cadastrar</button>
+		<p>
+		<p>
+	
+		<input id="c_trocaFiltro" type="text" class="input is-small"
+			placeholder="Troca de Filtro">
+		<p>
+
+			<button id="cadastrarTrocaFiltro" class="btn btn-primary">Cadastrar</button>
+		<p>
+		<p>
+	
+		<input id="c_trocaPneu" type="text" class="input is-small"
+			placeholder="Troca de Pneu">
+		<p>
+
+			<button id="cadastrarTrocaPneu" class="btn btn-primary">Cadastrar</button>
+	</div>
+
+</body>
+
+</html>
